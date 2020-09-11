@@ -1,0 +1,311 @@
+\documentclass[italian]{article}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{xfrac}
+\usepackage{stmaryrd}
+
+\usepackage{hyperref}
+
+\title{Diario di Algebra Commutativa}
+
+\author{G. Susanna}
+\date{}
+
+% NOTE: dvi files doesn't support links.
+% \href{https://it.wikipedia.org/wiki/Gallus_gallus_domesticus}{Gallina}    
+
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    
+    \section{Notazione}
+    
+    In generale $A,B$ indicano anelli commutativi con unità, in generale 
+    con la parola anello verrà indicato un anello commutativo con unità.
+    Con $A\left[t\right]$ l'anello dei polinomi in una variabile generato 
+    dall'anello $A$. Con $A\llbracket t \rrbracket$ l'anello delle serie formali su $A$.
+    
+    \section{Anelli}
+    % 
+    % Cose dette da ballico a lezione, con corrispettivo link alla lezione.
+    %
+    \subsection{Lezione 1}
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+        \begin{enumerate}
+          \item[(1a)] Spiegazione del corso, libri.
+          \item[(1a-1b)] Definizione di anello commutativo con unità e discussione dei casi banali.
+          \item[(1b)] Definizione di omomorfismo e isomorfismo tra anelli.
+          \item[(1b)] Alcune proprietà degli omomorfismi $f \colon A \to B$ di anelli:
+          	\begin{enumerate}
+          		\item $f(0_A) = 0_B$.
+          		\item Se $A = \{0\}$ esiste $f$ omomorfismo tra anelli se e solo se $B = \{0\}$.
+          		\item Se $B = \{0\}$ allora per ogni anello $A$ esiste un omomorfismo che è quello 
+          			costantemente nullo.
+          		\item Se e solo se un omomorfismo biettivo, è un isomorfismo.
+          	\end{enumerate}
+          \item[(1c)] Alcune proprietà degli omomorfismi $f \colon A \to B$ 
+            di anelli:
+                \begin{enumerate}
+                  \item $f(A)$ è un sottoanello di $B$.
+                  \item Sia $\ker(f) \coloneqq f^{-1}(\left\{ 0 \right\})$,
+                    allora $\ker(f) = \left\{ 0 \right\}$ sse $f$ iniettiva. 
+                \end{enumerate}
+          \item[(1c)] Definizione di ideale di un anello e esempio sugli interi.
+          \item[(1c)] Definizione ideale improprio $I$  e caratterizzazione: improprio sse
+            $1 \in I$.
+          \item[(1c-1d)] Biezione tra nucleo di funzioni e ideali di un anello. 
+        \end{enumerate}
+
+    \subsection{Lezione 2}
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+      \item[(2e)] Primo teorema di isomorfismo tra anelli e fattorizzazione degli 
+      	omomorfismi.
+      \item[(2e)] C'è una biezione tra gli ideali di $\sfrac{A}{I}$ e gli ideali di $A$ che contengono 
+		  $I$.
+      \item[(2e)] Enunciato del Terzo teorema di isomorfismo, dati $I, J \subseteq A$ ideali allora
+      	\begin{equation*}
+      		\dfrac{\sfrac{A}{I}}{\sfrac{J}{I}} \simeq \sfrac{A}{J}
+      	\end{equation*}
+      \item[(2e-2f)] Costruzione dell'anello dei polinomi in una variabile a partire 
+      		da un anello.
+      \item[(2g)] Costruzione per induzione dell'anello dei polinomi in più variabili.
+      \item[(2g)] Costruzione dell'anello delle serie formali a partire da un anello.
+      \item[(2g)] Definizione di ideale primo.
+      \item[(2g)] Definizione di ideale massimale.
+    \end{enumerate}
+
+    \subsection{Lezione 3}
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+      \item[(3a)] Riassunto delle precedenti lezioni.
+      \item[(3a)] Definizione di alcune operazioni sugli ideali:
+      \begin{enumerate}
+      	\item Data una famiglia di ideali $\{I_a\}_{a \in \Gamma}$ su un anello $A$ allora 
+      	\begin{equation*}
+	      	\bigcap_{a \in \Gamma} I_a \subseteq A
+      	\end{equation*}
+      	è un ideale.
+      	\item Dato $A$ anello e $S \subset A$ sottoinsieme qualunque, allora 
+      	\begin{equation*}
+	      	(S) \coloneqq \bigcap_{s \in \Gamma_S} I_s 
+      	\end{equation*} 
+        con $\{I_s\}_{s \in \Gamma_S}$ è la famiglia degli ideali di $A$ contenenti $S$. Allora $(S)$ è l'ideale minimale che contiene $S$.
+      \end{enumerate}
+  	  \item[(3b)] Definizione di ideale principale.
+  	  \item[(3b)] Definizione di altre operazioni sugli ideali:
+  	  	\begin{enumerate}
+  	  		\item Dati due ideali $I,J \subseteq A$ si definisce la somma come 
+  	  			\begin{equation*}
+  	  				I + J \coloneqq (I \cup J)
+  	  			\end{equation*}
+    		ovvero il minimo ideale che contiene l'unione dei due ideali.
+    		\item In particolare vale la l'equivalenza di definizioni: 
+    		\begin{equation*}
+    			I + J = \left\{ a + b \,\middle|\, a \in I, b \in J \right\}
+    		\end{equation*}
+    		\item La somma finita di $n$ ideali è commutativa e associativa.
+    		\item Siano $I, J, K \subseteq A$ ideali allora 
+    		\begin{equation*}
+	    		(I \cap K) + (J \cap K) \subseteq (I + J) \cap K 
+    		\end{equation*}
+    		\item Non vale in generale l'uguaglianza, si veda l'Esempio 1.2.1\cite{vergura}.
+  	  	\end{enumerate}
+      \item[(3b)] Dati $I, J\subseteq A$ ideali, allora 
+      	\begin{equation*}
+	      	IJ \coloneqq (\left\{ab \,\middle|\, a\in I, b \in J\right\})
+      	\end{equation*}
+      è ancora un ideale ed è detto ideale prodotto.
+      \item[(3b)] Alcune proprietà del prodotto di ideali
+      \begin{enumerate}
+      	\item Dati due ideali $I,J \subseteq A$ allora 
+      		\begin{equation*}
+	      		IJ \subseteq I \cap J
+      		\end{equation*}
+      	\item Non vale sempre l'uguaglianza, si prenda $p$ primo in $\mathbb{Z}$, 
+      	allora basta prendere $I = J = (p)$.
+      \end{enumerate}
+  	  \item[(3c)] Il prodotto finito di $n$ ideali è tale che 
+  	  \begin{equation*}
+	  	  I_1 \cdots I_n = (\left\{a_1 \cdots a_n \, \middle|\, a_1 \in I_1, \dots, a_n \in I_n\right\})
+  	  \end{equation*}
+      \item[(3c)] Definizione di campo o corpo commutativo.
+      \item[(3c)] Definizione di dominio di integrità.
+    \end{enumerate}
+
+    \subsection{Lezione 4}
+
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+      \item[4d] Ripasso ideale massimale e primo.
+      \item[4d] Proprietà degli ideali:
+        \begin{enumerate}
+          \item Dato $M \subset A$ è massimale sse $A / M$ è un campo.
+          \item Sia $I \subset M$ ideale $I$ è primo sse $A / I$ è un dominio di
+            integrità.
+        \end{enumerate}
+      \item[4d] Se $A$ è un dominio di integrità allora anche $A\left[t\right]$
+        è un dominio di integrità.
+      \item[4d] (Per induzione) Se $A$ è un dominio di integrità allora anche $A\left[t_1,
+        \dots,t_n\right]$ è un dominio di integrità.
+      \item[4e] Dimostrazione dei precedenti due enunciati.
+      \item[4e] Definizione di grado di un polinomio.
+      \item[4e] Enuncia alcuni esercizi svolti:
+        \begin{enumerate}
+          \item $K$ è un campo se e solo se ha un unico ideale proprio, ovvero
+            $\left\{ 0 \right\}$.
+          \item Se $A$ anello qualsiasi, allora $\left[t\right]$ non è un campo.
+          \item Se $A\left[t\right]$ è un dominio allora $A$ è un dominio.
+          \item $A$ è dominio se e solo se $A\llbracket t \rrbracket$ è un dominio.
+        \end{enumerate}
+      \item[4f] Sia $I \subseteq A$ allora si dice radicale di $I$, ovvero
+        $\sqrt{I}$ definito come
+            \begin{equation*}
+              \sqrt{I} \coloneqq \left\{ a \in A \,\middle|\, \exists n > 0,
+                a^n \in
+              I\right\}
+            \end{equation*}
+      \item[4f] Dimostrazione di proprietà sul radicale
+        \begin{enumerate}
+          \item Se $I$ ideale allora $I \subseteq \sqrt{I}$.
+          \item $\sqrt{I}$ è un ideale.
+          \item $\sqrt{I} = A$ se e solo se $I = A$.
+          \item $\sqrt{\sqrt{I}} = \sqrt{I}$.
+          \item Se $I \subseteq J \subseteq A$, con $I,J$ ideali allora
+            $\sqrt{I} \subseteq \sqrt{J}$.
+          \item In particolare se vale una inclusione stretta, non è detto che
+            valga l'inclusione stretta dei radicali. Si prenda $\mathbb{Z}$
+            e gli ideali $(p^k), (p)$, sono tali che $(p^k) \subseteq (p)$ ma
+            $\sqrt{(p^k)} = \sqrt{(p)} = (p)$.
+        \end{enumerate}
+       \item[4f] Si dice nilradicale di $A$ l'ideale $\sqrt{0}$. Gli elementi
+         nel nilradicale si dicono nilpotenti.
+       \item[4f-g] I domini non hanno elementi nilpotenti non banali. Alcuni
+         esempi di anelli con elementi nilpotenti. 
+    \end{enumerate}
+
+    
+    \subsection{Lezione 5}
+
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+        \item[5a] Ripasso operazioni su ideali.
+        \item[5a] Dati due ideali $I,J \subseteq A$, allora vale che 
+            \begin{equation*}
+              IJ = \left\{ \sum^n_{i=1} a_i b_i \,\middle|\, a_i \in I, b_i \in
+              I, \forall i \in \left\{0, \dots, n \right\} \forall n \in \mathbb{N}\right\}
+            \end{equation*}
+        \item[5a] Siano $I,J,H \subseteq A$ ideali, allora 
+              \begin{equation*}
+                  I(J+H)= IJ + IH
+              \end{equation*}
+        \item[5b] Teoremi cinesi del resto. 
+        \item[5b] Due ideali $I,J$ si dicono coprimi se $I+J = A$. In
+          particolare se esistono $\alpha \in I, \beta \in J$ tali che $\alpha
+          \beta = 1$.
+        \item[5b] Dimostrazione del teorema cinese del resto nel caso di due
+          ideali. Dati due ideali $I,J$ se essi sono coprimi allora 
+            \begin{align*}
+              I \cap J & = IJ \\
+              A / IJ & = A / (I \cap J) \simeq A/I \times A/J 
+            \end{align*}
+        \item[5b] Definizione del prodotto cartesiano di anelli
+          e dimostrazione di buona definizione, poi continuazione della
+          dimostrazione del teorema cinese dei resti.
+        \item[5c] Dimostrazione nel caso di un numero arbitrario finito del
+          teorema cineses del resto.
+        \item[5c] `Il trucco' per dimostrare il caso con un numero arbitrario
+          finito di ideali, ovvero usare $I_2 \cdots I_n$ come ideale coprimo
+          con $I_1$ e poi usare induzione e il teorema cinese dei resti nel caso
+          di due ideali.
+        \item[5c] Definizione: $S \subseteq A$ si dice 
+          moltiplicativo se $1 \in S$ e se $s, t \in S$ allora $st \in S$.
+        \item[5c-d] $I$ è massimale sse è un ideale proprio e per ogni $a \in
+          A \setminus I$ allora $(a, I) = A$.
+    \end{enumerate}
+
+
+    \subsection{Lezione 6}
+
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+      \item 
+    \end{enumerate}
+
+    \subsection{Lezione 7}
+
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+      \item 
+    \end{enumerate}
+    
+    \section{Moduli}
+    
+    \subsection{Lezione 8}
+
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+      \item 
+    \end{enumerate}
+
+    \subsection{Lezione 9}
+
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+      \item 
+    \end{enumerate}
+
+    \subsection{Lezione 10}
+
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+      \item 
+    \end{enumerate}   
+
+
+    \begin{thebibliography}{9}
+      \bibitem{vergura} M. Vergura, \textit{Dispense di Algebra commutativa},
+        \url{www.science.unitn.it/~ballico/Algebra_Commutativa-Ballico14.pdf}.
+      \bibitem{milne} J.S. Milne, \textit{A Primer of Commutative Algebra}
+      \bibitem{atyiah-macdonald} M.F. Atiyah, I.G. Macdonald, \textit{Introduction to 
+            Commutative Algebra}.
+      \bibitem{reid} M. Reid, \textit{Undergraduate Commutative Algebra}.
+    \end{thebibliography}
+\end{document}
+
+

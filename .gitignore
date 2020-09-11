@@ -1,0 +1,8 @@
+*.dvi
+*.pdf
+*.synctex.gz
+*.aux
+*.log
+*.toc
+*.idx
+*.out
