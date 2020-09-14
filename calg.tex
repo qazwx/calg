@@ -30,7 +30,10 @@
     con la parola anello verrà indicato un anello commutativo con unità.
     Con $A\left[t\right]$ l'anello dei polinomi in una variabile generato 
     dall'anello $A$. Con $A\llbracket t \rrbracket$ l'anello delle serie formali su $A$.
-    
+    Con $\operatorname{Spec}(A)$ si indica l'insieme degli ideali primi propri di $A$.
+    Con $\operatorname{Specm}(A)$ si indica l'insieme degli ideali massimali di
+    $A$.
+
     \section{Anelli}
     % 
     % Cose dette da ballico a lezione, con corrispettivo link alla lezione.
@@ -249,10 +252,49 @@
 
     Le lezioni sono disponibili sottoforma di 
     \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
-    su moodle}.
+    su moodle}. L'audio sembra avere un focolare acceso in prossimità della
+    videocamera.
     
     \begin{enumerate}
-      \item 
+      \item[6e] Enunciato del Teorema di Krull-Zorn: se $A \neq \{0\}$
+        anello allora ha ideali massimali contenti un ideale $I \subset A$ 
+        (richiede AC via Lemma di Zorn).
+      \item[6e] Definizione di ordinamento parziale e totale, catena. 
+      \item[6e] Enunciato del Lemma di Zorn (inteso come assioma equivalente
+        all'assioma della scelta): Sia $E$ un insieme parzialmente
+        ordinato rispetto a una relazione $\subseteq$ allora se ogni catena ha
+        un maggiorante, dev'essere che $E$ ha un elemento massimale. 
+      \item[6e-f] Dimostrazione del teorema di Krull-Zorn. 
+      \item[6f] In particolare dal Teorema di Krull-Zorn si ottiene che esistono
+        sempre ideali primi, ovvero $\operatorname{Spec}(A) \neq
+        \varnothing$ per ogni $A \neq \{0\}$. 
+      \item[6f] Alcune proprietà degli ideali primi rispetto alle mappe
+        \begin{enumerate}
+          \item Sia $f \colon A \to B$ omomorfismo di anelli. Se $J$ è un
+            ideale di $B$, allora $f^{-1}(J)$ è un ideale.
+          \item Se $J$ è primo allora $f^{-1}(J)$ è primo.
+          \item Esempio: $\mathbb{Z} \overset{i}{\subseteq} \mathbb{Q}$, ma
+            $i(\mathbb{Z})$ non è un ideale. Non vale che $i^{-1}(0) \subset
+            \mathbb{Z}$ è massimale malgrado $0$ lo sia in $\mathbb{Q}$.
+      \end{enumerate}
+    \item[6g] Proprietà degli omomorfismi quozienti  
+        \begin{enumerate}
+          \item Sia $I \subset A$ e $I \neq A$ e sia $\pi \colon A \to
+            A / I$ la proiezione canonica. Allora c'è biezione tra gli ideali
+            massimali di $A$ che contengono $I$ e gli ideali massimali di
+            $A / I$.   
+          \item (Nello stesso contesto del punto precedente) Esiste una biezione 
+            tra ideali primi di $A$ che contengono $I$ e gli ideali primi di $A/I$.
+          \item In generale le mappe surgettive si comportano bene tra $f \colon
+            A \to A / \ker(f)$ (ovvero mantengono le proprietà degli ideali).
+        \end{enumerate}
+      \item[6g] Sia $A$ anello e $S \subseteq A$ insieme moltiplicativo 
+        tale che esiste $I$ ideale di $A$ con $I \cap S \neq \varnothing$. Allora esiste 
+        ideale primo $P(S)$ che contiene $I$ e $P \cap
+        S = \varnothing$\footnote{richiede l'assioma della scelta}. 
+      \item[6g] Ripasso del radicale e nilradicale.
+      \item[6h] Enunciato: sia $I \subseteq A$ e $\pi \colon A \to A / I$ con $I 
+        \subseteq J$, allora $\sqrt{J/I} = \sqrt{J}/I$.
     \end{enumerate}
 
     \subsection{Lezione 7}
@@ -262,11 +304,50 @@
     su moodle}.
     
     \begin{enumerate}
-      \item 
+      \item[7i] Definizione di ideale radicale, ovvero gli ideali $I \subseteq
+        A$ tali che $\sqrt{I} = I$.
+      \item[7i] Gli ideali primi sono radicali.
+      \item[7i] Dimostrazione della proposizione: $I \subseteq A$ ideale, allora 
+        \begin{equation*}
+          \sqrt{I} = \bigcap_{\substack{P \in \operatorname{Spec}(A),\\ I \subseteq P}} P
+        \end{equation*}
+      \item[7i] L'intersezione di radicali è radicale. 
+      \item[7i] Ogni ideale proprio $I \neq A$ è contenuto in un ideale
+        massimale sse esiste un ideale massimale. Questo è ovvio considerando il 
+        quoziente $A/I$ e usando il lemma di Krull-Zorn (debole).
+      \item[7i] $A$ si dice \emph{locale} se ha un unico ideale massimale
+        (più esempi nel capitolo 4 di \cite{vergura})
+      \item[7i-j] Esempio delle serie formali come anelli locali
+        e caratterizzazione dei suoi ideali. 
+      \item[7j] Dimostrazione che ogni anello di polinomi su un campo è un dominio 
+        e un anello a ideali principali (si può vedere in modo analogo a quanto 
+        fatto in Algebra A con i domini euclidei su $\mathbb{Z}$). 
+      \item[7k] Ideali primi su $\mathbb{R}\left[ t \right]$. 
     \end{enumerate}
     
     \section{Moduli}
     
+    \subsection{Lezione 7}
+
+    Le lezioni sono disponibili sottoforma di 
+    \href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+    su moodle}.
+    
+    \begin{enumerate}
+      \item[7k] Introduzione alla teoria dei moduli come ``spazi vettoriali per
+        gli anelli'': fissato $A$ anello e $M$ si dice $A$-modulo si dice modulo 
+        se $(M,+,0_M)$ è un gruppo abeliano e esiste l'operazione $\cdot \colon 
+        A \times M \to M$. L'operazione $\cdot$ dev'essesere distributiva,
+        pseudo-associativa, avere un elemento neutro.
+      \item[7k] Se $A = \{0\}$ allora l'unico $A$-modulo è $\{0\}$. 
+      \item[7k] Se $M$ è un $A$-modulo, allora $0 \in N \subseteq M$ si dice
+        sottomodulo se è chiuso rispetto al $+$ del modulo e chiuso rispetto al
+        prodotto esterno dall'anello $A$.
+      \item[7k] Esempi di moduli: fissato un anello questo è un modulo con
+        sottomoduli gli ideali dell'anello.
+    \end{enumerate}
+
+
     \subsection{Lezione 8}
 
     Le lezioni sono disponibili sottoforma di 
@@ -297,6 +378,65 @@
       \item 
     \end{enumerate}   
 
+    \subsection{Lezione 11}
+
+	Le lezioni sono disponibili sottoforma di 
+	\href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+		su moodle}.
+	
+	\begin{enumerate}
+		\item 
+	\end{enumerate}   
+
+    \subsection{Lezione 12}
+
+	Le lezioni sono disponibili sottoforma di 
+	\href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+		su moodle}.
+	
+	\begin{enumerate}
+		\item 
+	\end{enumerate}
+   
+    \subsection{Lezione 13}
+
+	Le lezioni sono disponibili sottoforma di 
+	\href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+		su moodle}.
+	
+	\begin{enumerate}
+		\item 
+	\end{enumerate}   
+
+	\subsection{Lezione 14}
+	
+	Le lezioni sono disponibili sottoforma di 
+	\href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+		su moodle}.
+	
+	\begin{enumerate}
+		\item 
+	\end{enumerate}  
+
+	\subsection{Lezione 15}
+	
+	Le lezioni sono disponibili sottoforma di 
+	\href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+		su moodle}.
+	
+	\begin{enumerate}
+		\item 
+	\end{enumerate}  
+
+	\subsection{Lezione 16}
+	
+	Le lezioni sono disponibili sottoforma di 
+	\href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
+		su moodle}.
+	
+	\begin{enumerate}
+		\item 
+	\end{enumerate}  
 
     \begin{thebibliography}{9}
       \bibitem{vergura} M. Vergura, \textit{Dispense di Algebra commutativa},
