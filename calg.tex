@@ -355,7 +355,74 @@
     su moodle}.
     
     \begin{enumerate}
-      \item 
+      \item[8a] Ripasso della definizione di $A$-modulo, sottomodulo e osservazioni 
+        banali.
+      \item[8a] L'intersezione arbitraria di sottomoduli è un sottomodulo.
+      \item[8a] Sia $S \subseteq M$ con $M$ $A$-modulo. Allora il
+        sotto-$A$-modulo generato da $S$ è 
+            \begin{equation*}
+              (S) \coloneqq \bigcap_{S \subset N \subseteq M} N
+            \end{equation*}
+        con $N$ sottomoduli. 
+      \item[8a] $(S)$ è il minimo modulo di $N$ tale che contiene $S$.
+      \item[8a] Sia $M$ un $A$-modulo e $N_1, N_2 \subseteq M$ sottomoduli.
+        Allora definiamo 
+        \begin{equation*}
+          N_1 + N_2 = (N_1 \cup N_2)
+        \end{equation*}
+      \item[8b] Siano $M, N$ $A$-moduli. Allora $f \colon M \to N$ si dice
+        omomorfismo di $A$-moduli (anche detta applicazione $A$-lineare) 
+        se rispetta le operazioni:
+        \begin{enumerate}
+          \item È un omomorfismo di gruppi abeliani, vale 
+                $f(a+b) = f(a)+f(b) = f(b)+f(a) = f(b+a)$
+          \item Preserva il prodotto dell'anello sul modulo, vale
+                $f(\lambda n) = \lambda f(n)$
+        \end{enumerate}
+      \item[8b] Alcune proprietà degli omomorfismi tra $A$-moduli:
+        \begin{enumerate}
+          \item La controimmagine di un sottomodulo attraverso un omomorfismo di
+            moduli è un sottomodulo.
+          \item L'immagine di un omomorfismo di moduli è un sottomodulo del
+            codominio.
+          \item $\ker(f)$ è un sottomodulo.
+        \end{enumerate}           
+      \item[8b] Definizione del quoziente su $A$-moduli (totalmente analogo ai
+        gruppi), buona definizione delle operazioni di $A$-modulo su quoziente
+        e della mappa di proiezione canonica.
+      \item[8c] Alcuni esercizi (analoghi a quelli per ideali/anelli)
+        \begin{enumerate}
+            \item Sia $f \colon M \to N$ omomorfismo bigettivo allora
+                è isomorfismo di $A$-moduli.
+            \item Sia $L \subseteq M$ sotto-$A$-modulo, allora $\pi : M \to M/L$ da
+                una bigezione tra i sotto-$A$-moduli contenenti $L$ e i 
+                sotto-$A$-moduli di $M/L$.
+            \item Dati $L_1,L_2,L_3 \subset M$, $A$-sottomoduli allora
+              \begin{equation*}
+                (L_1 \cap L_2) + (L_1 \cap L_3) \subseteq L_1 \cap (L_2 + L_3) 
+              \end{equation*}
+            \item Siano $L_1 \subseteq L_2 \subseteq M$ sotto-$A$-moduli, allora
+              \begin{equation*}
+                (M/L_1)/(L_2/L_1) \simeq M/L_2
+              \end{equation*}
+      \end{enumerate}
+      \item[8c] Definizioni di operazioni tra due $A$-moduli $M,N$:
+        \begin{enumerate}
+          \item Definiamo 
+            \begin{equation*}
+              \operatorname{Hom}_A(M,N) \coloneqq \left\{ f \colon M \to
+              N \,\middle|\, f\, \text{omomrfismo tra moduli} \right\}
+          \end{equation*}
+          allora è un $A$-modulo.
+        \item Definizione di 
+          \begin{equation*}
+            \operatorname{End}_A(M) \coloneqq \operatorname{Hom}_A(M,M)
+          \end{equation*}
+          che è ancora un $A$-modulo. Inoltre ha la composizione come operazione
+          associativa, distributiva e forma un anello non-commutativo rispetto
+          a $(+, \circ)$.
+        \end{enumerate}
+      \item[8d] Mappa identità come unità dell'anello $\operatorname{End}(M)$.
     \end{enumerate}
 
     \subsection{Lezione 9}
