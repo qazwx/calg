@@ -432,7 +432,67 @@
     su moodle}.
     
     \begin{enumerate}
-      \item 
+      \item[9e] Proposizione 2.1.3\cite{vergura}: Siano $A$ un anello e $M$ 
+        un gruppo abeliano. Allora ogni struttura di $A$-modulo su $M$ 
+        definisce un omomorfismo di anelli $\mu \colon A \to 
+        \operatorname{End}(M)$ e viceversa.
+      \item[9e] Il nucleo della mappa della proposizione 2.1.3 è un ideale di
+        $A$, quindi $A/\ker(\mu)$. (Esercizio: quando $a \in \ker(\mu)$ se
+          e solo se $am = 0$ per ogni $m \in M$, viene anche detto
+        $\derivatorname{Ann}(M)$ annichilatore o annullatore)
+      \item[9e] Osservazione è possibile costruire una struttura di modulo anche
+        su $A/\ker(\mu)$.
+      \item[9e] Costruzioni di moduli
+        \begin{enumerate}
+          \item Presa una qualunque famiglia non vuota $\left\{ M_\alpha
+            \right\}_{\alpha \in \Gamma}$ di $A$-moduli, allora il prodotto 
+            cartesiano di $A$-moduli è definito come 
+            \begin{equation*}
+              \prod_{\alpha \in \Gamma} M_\alpha = \left\{ (m_1, \dots,)
+              \,\middle|\, m_\alpha \in M_\alpha \right\}
+            \end{equation*}
+            si possono definire somma e prodotto rispetto all'anello $A$. Da cui
+            si può determinare una struttura di $A$-modulo. Definizione delle
+            proiezioni come omomorfismi tra l'$A$-modulo prodotto a una delle
+            componenti.
+          \item Presa una qualunque famiglia non vuota $\left\{ M_\alpha
+            \right\}_{\alpha \in \Gamma}$ di $A$-moduli, allora definiamo la
+            somma diretta come 
+            \begin{equation*}
+              \bigoplus_{\alpha \in \Gamma} M_\alpha \coloneqq \left\{
+                (m_\alpha)_{\alpha \in \Gamma} \,\middle|\, \text{un numero
+                finito di termini}\, m_\alpha \neq 0 \right\} \subseteq
+                \prod_{\alpha \in \Gamma} M_\alpha
+            \end{equation*}
+          con le solite operazioni di somma e prodotto (come nel prodotto
+          cartesiano). Allora la somma diretta è un sottomodulo del prodotto
+          cartesiano.
+        \end{enumerate}
+      \item[9f] La somma diretta di $\left\{ M_\alpha \right\}_{\alpha \in
+        \Gamma}$ è il minimo sottomodulo del prodotto cartesiano, generato da
+        \begin{equation*}
+          \bigcup_{\alpha \in \Gamma} \tilde{M}_\alpha \quad \tilde{M}_\alpha
+          \coloneqq i_\alpha(M_\alpha) 
+        \end{equation*}
+        dove $i_\alpha \colon M_\alpha \to \prod_{\alpha \in \Gamma} M_\alpha$
+        è l'iniezione canonica nel prodotto cartesiano. 
+      \item[9f-g] Dimostrazione che il modulo $\operatorname{Hom}_A(A^n, A^m)$ con
+        $A$ anello e $m,n \in \mathbb{N}$. Allora gli elementi del modulo
+        $\operatorname{Hom}_A(A^n, A^m)$ si rappresentano come matrici $m \times
+        n$ (i.e. c'è un omomorfismo tra moduli tra il modulo delle matrici
+        e quello degli omomorfismi tra prodotto di anelli). 
+      \item[9g] Dato $M$ $A$-modulo, si dice libero se 
+        \begin{equation*}
+          \sum_{\alpha = 0}^n a_\alpha m_\alpha = 0 \implies \forall \alpha . \, a_{\alpha} = 0 
+        \end{equation*}
+      \item[9g] (Esercizio) Se $M \neq \left\{ 0 \right\}$ è un $A$-modulo, $M$
+        ha base finita (di dimensione $n$) se e solo se $A^n \cong M$. 
+      \item[9g] Esempio di modulo senza base: $A = \mathbb{Z}$ e $M
+        = \mathbb{Z}/2\mathbb{Z}$; $A = \mathbb{Z}$ e $M = \mathbb{R}$.
+      \item[9g] Se $M$ ha base del tipo $\left\{ l_\alpha \right\}_{\alpha \in
+        \Omega}$ in bigezione con $\Gamma \neq \varnothing$ se
+        e solo se $M \cong A^(\Gamma) = \bigoplus_{\alpha \in \Gamma} A$ 
+      \item[9g-h] Esempi 2.2.1\cite{vergura}. 
     \end{enumerate}
 
     \subsection{Lezione 10}
