@@ -8,6 +8,7 @@
 \usepackage{mathtools}
 \usepackage{xfrac}
 \usepackage{stmaryrd}
+\usepackage{tikz-cd}
 
 \usepackage{hyperref}
 
@@ -439,7 +440,7 @@
       \item[9e] Il nucleo della mappa della proposizione 2.1.3 è un ideale di
         $A$, quindi $A/\ker(\mu)$. (Esercizio: quando $a \in \ker(\mu)$ se
           e solo se $am = 0$ per ogni $m \in M$, viene anche detto
-        $\derivatorname{Ann}(M)$ annichilatore o annullatore)
+        $\operatorname{Ann}(M)$ annichilatore o annullatore)
       \item[9e] Osservazione è possibile costruire una struttura di modulo anche
         su $A/\ker(\mu)$.
       \item[9e] Costruzioni di moduli
@@ -481,7 +482,10 @@
         $\operatorname{Hom}_A(A^n, A^m)$ si rappresentano come matrici $m \times
         n$ (i.e. c'è un omomorfismo tra moduli tra il modulo delle matrici
         e quello degli omomorfismi tra prodotto di anelli). 
-      \item[9g] Dato $M$ $A$-modulo, si dice libero se 
+      \item[9g] Dato $M$ $A$-modulo, si dice libero se esiste una base
+        $(m_\alpha)_{\alpha \in \Lambda}^n$. Ovvero se la base genera $M$ 
+        (attraverso somme finite) e vale la condizione di lineare indipendenza 
+        (di ogni suo sottoinsieme finito):
         \begin{equation*}
           \sum_{\alpha = 0}^n a_\alpha m_\alpha = 0 \implies \forall \alpha . \, a_{\alpha} = 0 
         \end{equation*}
@@ -502,9 +506,88 @@
     su moodle}.
     
     \begin{enumerate}
-      \item 
+      \item[10i] Continuazione Esempi 2.2.1\cite{vergura}. 
+        \begin{enumerate}
+          \item Dimostrazione che dati tre $A$-moduli, $M_1, M_2, N$, allora 
+            \begin{equation*}
+                \operatorname{Hom}_A(M_1 \oplus M_2, N) \cong
+                \operatorname{Hom}_A(M_1, N) \oplus  \operatorname{Hom}_A(M_2, N)
+            \end{equation*}
+          \item Dimostrazione che dati tre $A$-moduli, $M, N_1, N_2$, allora 
+            \begin{equation*}
+                \operatorname{Hom}_A(M, N_1 \oplus N_2) \cong
+                \operatorname{Hom}_A(M, N_1) \oplus  \operatorname{Hom}_A(M, N_2)
+            \end{equation*}
+        \end{enumerate}
+      \item[10i] Dati $M,N,L$ $A$-moduli. Allora $M \to N \to L$ è un complesso
+        se $g \circ f = 0$, ovvero $f(M) \subseteq \ker(g)$ (in generale possono
+        essere anche un infinità numerabile di $A$-moduli e mappe).  
+      \item[10i] Dato un complesso, la successione si dice esatta se $f_i(M)
+        = \ker(f_{i+1})$.
+      \item[10i] Le successioni esatte interessanti sono quelle del tipo 
+        \begin{equation}
+          \label{eq:succ_esatta_brv}
+          0 \to M \xrightarrow{\alpha} N \xrightarrow{\beta} L \to 0
+        \end{equation}
+        se è esatta si dice successioni esatte brevi.
+      \item[10j] Osservazioni sulle successioni esatte brevi (si veda Esempi
+        2.3.1 \cite{vergura}): 
+        \begin{enumerate}
+          \item Una successione breve del tipo 
+            \begin{equation*}
+              0 \to L \xrightarrow{\alpha} M
+            \end{equation*}
+            è esatta se e solo se $\ker{\alpha} = \left\{ 0 \right\}$.
+          \item Una successione breve del tipo 
+            \begin{equation*}
+              M \xrightarrow{\beta} N \xrightarrow 0
+            \end{equation*}
+            è esatta se e solo se $\beta$ è suriettiva.
+          \item Inoltre se si ha una sequenza del tipo
+            \eqref{eq:succ_esatta_brv} allora è esatta se e solo se $\alpha$
+            iniettiva, $\beta$ suriettiva e $\ker(\beta) = \alpha(L)$.
+        \end{enumerate}
+      \item[10j] Dati due moduli $L, N$, allora possiamo fare una successione
+        esatta \footnote{è l'equivalente del teorema nullità+rango}
+        \begin{equation*}
+          0 \to L \to L \oplus N \to N \to 0
+        \end{equation*}
+      \item[10j] Una successione esatta si dice che splitta (spezza) se data una
+        successione esatta del tipo \eqref{eq:succ_esatta_brv} allora $N \cong
+        M \oplus L$.
+      \item[10j] (*) Se esiste un omomorfismo di moduli $\varphi \colon M \to L \oplus N$ 
+        tale da far commutare il diagramma 
+        \begin{equation*}
+        \begin{tikzcd}
+        	0 \arrow{r} & L \arrow{r}{\alpha} \arrow{d}{Id_L} & M \arrow{r}{\beta}
+        	\arrow[dashed]{d}{\varphi} & N \arrow{r} \arrow{d}{Id_N} & 0 \\
+        	0 \arrow{r} & L \arrow{r}{\alpha} & L \oplus N \arrow{r}{\beta} 
+        	& N \arrow{r} & 0 \\
+        \end{tikzcd}	
+        \end{equation*}
+        allora $\varphi$ è un isomorfismo.
+      \item[10k] Se $N$ è un $A$-modulo libero allora ogni successione corta
+        esatta con $N$ all'ultimo passo (prima dello $0$), è una successione
+        spezzante. Dimostrazione nel caso generale in cui $N$ non ha base
+        finita. (Dimostrazione non conclusa) 
+      \item[10k] Se $A$ è un campo e si abbiano spazi vettoriali di dimensione
+        finita $V_1, V_2, V_3$, allora se la successione è esatta 
+        \begin{equation*}
+          0 \to V_1 \to \to V_2 \to V_3 0
+        \end{equation*}
+        allora $\dim(V_2) = \dim(V_1) + \dim(V_3)$. (senza dimostrazione, ma
+        semplice corollario del teorema precedente)
+      \item[10k] Se $A$ è un campo e si hanno $\{V_i\}_{i = 0}^n$ 
+     	spazi vettoriali che formano una successione esatta 
+        \begin{equation*}
+          0 \to V_1 \to \cdots \to V_n \to 0
+        \end{equation*}
+        allora $\sum_{i = 0}^n (-1)^i \dim(V_i) = 0$. Con dimostrazione. 
+      \item[10l] Continuazione dimostrazione della proposizione precedente.
     \end{enumerate}   
-
+    
+    \section{Noethrianità}
+    
     \subsection{Lezione 11}
 
 	Le lezioni sono disponibili sottoforma di 
