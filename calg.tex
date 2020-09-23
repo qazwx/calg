@@ -632,7 +632,44 @@
 		su moodle}.
 	
 	\begin{enumerate}
-		\item 
+      \item[11d] Teorema 3.2.1: Teorema della base di Hilbert: $A$ anello
+        noetheriano se e solo se $A\left[t\right]$ è noetheriano (con
+        dimostrazione; si legga 
+        \url{https://en.wikipedia.org/wiki/Hilbert\%27s_basis_theorem}). 
+      \item[11e] Corollario 3.2.1 
+      \item[11e] Alcuni esempi di anelli noetheriani: 
+        \begin{enumerate}
+          \item $\mathbb{Z}$, $\mathbb{Z}\left[x_1, \dots,x_n\right]$.
+          \item $A_1, A_2$ anelli noetheriani allora $A_1 \times A_2$ sono
+            noetheriani. 
+        \end{enumerate}
+      \item[11e] Enunciato / Esercizio: Se $A$ noetheriano allora $A\llbracket x \rrbracket$ 
+        è noetheriano.
+      \item[11e] Definizione 3.2.1: Sia $A$ anello, si dice $A$-algebra una
+        coppia ordinata $(B,\varphi)$ con $B$ anello e $\varphi \colon A \to B$
+        omomorfismo. (spiegazione della definizione: praticamente $B$ diventa un
+        $A$-modulo con $B$ anello rispetto al prodotto $\varphi(a) b$ con $a \in
+        A, b\in B$). Se $\varphi$ è iniettiva, allora è anche detta estensione di
+        anelli.
+      \item[11e] Definizione 3.2.4: Una $A$-algebra $(B, \varphi)$ si dice
+        finita se è finita come $A$-modulo. Si dice invece finitamente generata
+        se $\exists b_1, \dots, b_k \in A$ tali che l'omomorfismo di $A$-moduli
+        \begin{equation*}
+        	\begin{tikzcd}[row sep=0.1em, column sep = 2em]
+        		f \colon   & A\left[ x_1, \dots,x_k \right] \arrow{r} & B \\
+        	 			& (a_n x_i^n + \dots + a_0) \arrow[r, maps to] 
+        	 			& \varphi(a_n)b^n_i + \dots \varphi(a_0)		
+        	\end{tikzcd}
+        \end{equation*}
+        sia suriettivo. In tal caso scriviamo $B = A\left[ b_1, \dots, b_k
+        \right]$.
+      \item[11e] Proposizione 3.2.1: Sia $A$ anello noetheriano e sia
+        $(B,\varphi)$ una $A$-algebra. Allora
+        \begin{enumerate}
+          \item Se $B$ è finita, allora $B$ è un $A$-modulo noetheriano.
+          \item Se $B$ è finitamente generata, allora $B$ è un anello
+            noetheriano.
+        \end{enumerate}
 	\end{enumerate}
    
     \subsection{Lezione 12 - parte 1}
