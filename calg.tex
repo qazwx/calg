@@ -663,7 +663,7 @@
         \end{equation*}
         sia suriettivo. In tal caso scriviamo $B = A\left[ b_1, \dots, b_k
         \right]$.
-      \item[11e] Proposizione 3.2.1: Sia $A$ anello noetheriano e sia
+      \item[11e-12f] Proposizione 3.2.1: Sia $A$ anello noetheriano e sia
         $(B,\varphi)$ una $A$-algebra. Allora
         \begin{enumerate}
           \item Se $B$ è finita, allora $B$ è un $A$-modulo noetheriano.
@@ -679,17 +679,135 @@
 		su moodle}.
 	
 	\begin{enumerate}
-		\item 
-	\end{enumerate}   
+      \item[12f] Dimostrazione della Proposizione 3.2.1. 
+      \item[12f] Definizione 3.1.2\cite{vergura}: un $A$-modulo $M$ si dice 
+        noetheriano se soddisfa una delle seguenti proprietà equivalenti:
+        \begin{enumerate}
+          \item Ogni famiglia non vuota di sottomoduli ammette un elemento
+            massimale.
+          \item Ogni catena ascendente di sottomoduli è stazionaria.
+          \item Ogni sottomodulo è finitamente generato.
+        \end{enumerate}
+      \item[12f] Dimostrazione dell'equivalenza delle definizioni; è la stessa
+        cosa dimostrata per gli anelli, cambiando anello con $A$-modulo.
+        Verifica solo il caso $2 \iff 3$. 
+      \item[12f] Lemma (non presente in \cite{vergura}): Se $\pi \colon M \to N$ 
+        se $\pi$ è surgettiva e $M$ è noetheriano, allora $N$ è noetheriano 
+        (con dimostrazione).
+      \item[12f] Osservazione: se $M$ è noetheriano, allora $M$ è finitamente
+        generato.
+      \item[12g] In generale non vale che se $M$ finitamente generato, non
+        è noetheriano. Basta riguardare l'esempio dell'anello dei polinomi in
+        infinite variabili (Esempio 3.1.1 \cite{vergura}).
+      \item[12g] Corollario 3.1.1 \cite{vergura}: Se $M$ è un $A$-modulo noetheriano 
+        e $L \le M$ sottomodulo, allora $L$ è noetheriano.
+      \item[12g] Proposizione 3.1.2\cite{vergura}: Sia $A$ anello tale che 
+        esiste una successione esatta corta di $A$-moduli
+        \begin{equation*}
+          0 \to L \xrightarrow{\alpha} M \xrightarrow{\beta}
+            N \to 0
+        \end{equation*}
+        Allora $M$ è noetheriano se e solo se $N$ e $L$ lo sono.
+        (con dimostrazione, la seconda parte la dimostra osservando che preso un
+          $U \le M$, $\alpha(L) \cap U \le M$ è finitamente generato,
+          $\beta(U) \le N$ è finitamente generato, quindi segue per lemma che $U$ 
+          è finitamente generato in $M$).
+      \item[12g] Lemma per la dimostrazione precedente: Sia $A$ anello tale che
+        esiste una successione esatta corta di $A$-moduli
+        \begin{equation*}
+          0 \to L \xrightarrow{\alpha} M \xrightarrow{\beta}
+            N \to 0
+        \end{equation*}
+        Allora se $L, N$ sono finitamente generati, allora $M$ è finitamente
+        generato.
+      \item[12h] Lemma: Se $L,N$ sono finitamente generati allora $L \oplus N$
+        è finitamente generati (con dimostrazione).
+      \item[12h] Proposizione \emph{interessantissima}: Sia $A$ noetheriano
+        anello. E $N$ è un $A$-modulo allora è noetheriano se e solo se
+        è finitamente generato (Corollario 3.1.1 \cite{vergura}). 
+      \item[12h-i] Dato un $A$ anello noetheriano e $M$ un $A$-modulo finitamente
+        generato da $\left\{ u_1, \dots, u_r \right\}$. Ciò vuol dire che esiste
+        una mappa $A^r \xrightarrow{\varphi} M$ surgettiva. Allora la
+        successione 
+        \begin{equation*}
+          0 \to \ker(\varphi) \xrightarrow{i} A^r \xrightarrow{\varphi} M \to 0
+        \end{equation*}
+        implica che $\ker(\varphi)$ noetheriano. In particolare il nucleo
+        rappresenta i generatori di $A^m$; esiste $A^m \xrightarrow{j}
+        \ker(\varphi)$ surgettiva. 
+        \begin{equation*}
+          A^m \xrightarrow{j \circ i} A^r \xrightarrow{\varphi} M \to 0
+        \end{equation*}
+        \emph{Importante}: In qualche modo ogni modulo finitamente generato è 
+        descritto (a meno di isomorfismo) da una matrice tra anelli 
+        noetheriani $A^m \to A^n$ (Proposizione 3.1.3 \cite{vergura}). 
+      \item[12i] Definizione di $\operatorname{coker}(f) \coloneqq A / Im(f)$. 
+      \item[12i] Definizione 3.2.2 \cite{vergura}: omomorfismo tra $A$-algebre.
+      \item[12i] Definizione 3.2.3 \cite{vergura}: definizione sottoalgebra.
+      \item[12i] Osservazione 3.2.1 \cite{vergura}: Se $(B, \varphi)$ è una
+        $A$-algebra, $R \subseteq B$ è una sottoalgebra sse è un sottoanello di
+        $B$ tale che $\varphi(A) \subseteq R$.
+      \item[12i] Differenza tra $A$-algebra finitamente generata e finitamente
+        generata come modulo, ovvero richiede un omomorfismo tra moduli $A^r \to B$
+        surgettiva (quest'ultima è più forte). Per esempio se si ha $A\left[ x
+        \right]$ algebra, questa è finitamente generato in senso di algebra, ma non
+        è finitamente generata in senso di modulo. % TODO: provare
+    \end{enumerate}  
+    % Alcuni esercizi: 
+    %
+    % 1. Se $\operatorname{Hom}_A(N,M)$ è noetheriano se gli $A$-moduli lo
+    % sono? Se $A$ è noetheriano e $N,M$ no? Se tutto è noetheriano? Da questo
+    % ricavare che \operatorname{Hom}_A(A^r,M) \cong M e quindi $M$ noetheriano
+    % se finitamente generato e $A$ lo è.
+    % 2. 
+    %
 
-	\subsection{Lezione 12 - parte 2}
+
+    \section{Anelli di frazioni}
+    
+    \subsection{Lezione 12 - parte 2}
 	
 	Le lezioni sono disponibili sottoforma di 
 	\href{https://didatticaonline.unitn.it/dol/course/view.php?id=23268}{videolezioni
 		su moodle}.
 	
 	\begin{enumerate}
-		\item 
+      \item[12j] Esempio di $\mathbb{Q}$ come anello di frazioni di
+        $\mathbb{Z}$. 
+      \item[12j] Costruzione generale a partire di un anello. Sia $A$ anello
+        e $S\subset A$ tale da essere chiuso moltiplicativamente. Allora
+        definiamo $S^{-1} A = A \times S / \sim$ come l'anello delle frazioni
+        con la relazione di equivalenza $(a,s) \sim (b,t) \iff \exists u \in S\;
+        u(at - bs) = 0$. 
+      \item[12k] Osservazione che l'anello delle frazioni è una $A$-algebra
+        rispetto a $\varphi \colon a \mapsto \frac{a}{1}$. 
+      \item[12k] Verifica che l'anello delle frazioni è un anello commutativo
+        con unità e buona definizione delle operazioni.
+      \item[12k] Nucleo della mappa $\varphi \colon A \to S^{-1}(A)$ e caso
+        particolare in cui $\ker(\varphi) = \left\{ 0 \right\}$.
+      \item[12k] Riassume dicendo che ha dimostrato il Teorema 4.1.1\cite{vergura}.
+      \item[12k] Proposizione 4.1.1\cite{vergura}: Se $A \xrightarrow{f} B$ omomorfismo 
+        tra anelli con $(B, \varphi)$ $A$-algebra, per ogni $s \in A$ esiste $\gamma \in B$ 
+        tale che $s\gamma = 1_B$. Allora esiste una e una sola mappa 
+        $S^{-1}(A) \xrightarrow{g} B$ tale che $f = g \circ \varphi$.
+      \item[12l] Casi banali della Proposizione 4.1.1 \cite{vergura}
+        e idea della dimostrazione.
+      \item[12l] Esempi di anelli di frazioni.
+        \begin{enumerate}
+          \item Se $A$ dominio e $S = A \setminus \left\{ 0 \right\}$, allora
+            $S^{-1}(A)$ è detto campo delle frazioni del dominio.
+          \item Se $\mathbb{Q} = (\mathbb{Z}^\times)^{-1}(\mathbb{Z})$ allora
+            $\mathbb{Q}$ non è una $\mathbb{Z}$-algebra finitamente generata. 
+        \end{enumerate}
+      \item[12l] Studio degli ideali primi di $S^{-1}(A)$.
+        \begin{enumerate}
+          \item Se $\left\{ 0 \right\} \in S$ allora $S^{-1}A = \left\{ 0
+            \right\}$ quindi non ha ideali.
+          \item Teorema: c'è una biezione tra $\operatorname{Spec}(S^{-1}(A))$
+            e gli ideali primi di $A$ che non intersecano $S$ (con
+            dimostrazione parziale).
+        \end{enumerate}
+      %\item[12l] Se $A$ noetheriano allora $S^{-1}A$ è noetheriano.
 	\end{enumerate}  
 
 	\subsection{Lezione 13 - parte 1}
@@ -699,7 +817,70 @@
 		su moodle}.
 	
 	\begin{enumerate}
-		\item 
+      \item[13m] Esempi di anelli di frazioni (Esempi \cite{vergura})
+        \begin{enumerate}
+          \item Se $A$ dominio e $S = A \setminus \left\{ 0 \right\}$ allora
+            $S^{-1}A$ è il campo delle frazioni.
+          \item Preso l'insieme dei non divisori dello zero $\Sigma$, 
+            è tale che almeno $1 \in \Sigma$ (supponendo $A \neq \left\{ 
+            0 \right\}$). Inoltre è moltiplicativamente chiuso ed è il più grande
+            per sottoinsieme di $A$ tale che $\varphi \colon A \to \Sigma^{-1}A$
+            tale che $\varphi$ rimane iniettiva.
+            \footnote{Osserva che $\ker(\varphi) = \left\{ 0 \right\}$ 
+            sse nessun elemento di $S$ è divisore dello $0$. Dove $\varphi 
+            \colon A \to S^{-1}A$}.
+          \item Sia $A \neq \left\{ 0 \right\}$ e consideriamo $P \in 
+            \operatorname{Spec}(A)$, allora $A \setminus P$ ha le seguenti
+            caratteristiche:
+            \begin{enumerate}
+                \item $1 \in A \setminus P$
+                \item $A \setminus P$ è moltiplicativamente chiuso.
+            \end{enumerate}
+            Quindi per ogni $P \in \operatorname{Spec}(A)$ e definito $T
+            = A \setminus P$ allora $T^{-1}A$ è un anello di frazioni.
+          \item Sia $ k \in A$ e consideriamo $S = \left\{ 1, k, k^2, \dots
+            \right\}$ è moltiplicativamente chiuso e quindi possiamo fare un
+            anello di frazioni su questo sottoinsieme\footnote{se $k$
+            è nilpotente, allora l'anello di frazioni è quello banale dato che
+            $0 \in S$.}. In questo caso si può scrivere $S^{-1}A = A\left[ x
+            \right] / (kx - 1)$ (non molto importante). 
+          \item Se prendiamo $\mathbb{Z}$ e $n \ge 2$, allora $S = \left\{1, n, n^2,
+            \dots\right\}$ allora l'anello di frazioni $S^{-1}\mathbb{Z}$. Il
+            caso in cui $n$ sia primo. 
+         \end{enumerate}
+       \item[13m-n] Enunciato della Proposizione 4.1.3 \cite{vergura}, come
+         trovare il $T$ della proposizione 4.1.3: Prendi la saturazione di $S$,
+         ovvero $T \coloneqq \left\{ t \in A \,\middle|\, a \in
+         A, \; at \in S \right\}$.
+       \item[13n] Enuncia definizione 4.2.1 \cite{vergura} (estensione
+         e contrazione di un ideale) al fine di stabilire
+         i rapporti tra gli ideali dato $A \xrightarrow{f} B$. Se indichiamo con
+         $e(I)$ l'estensione di $I \subset A$ attraverso $f$ e $r$ la
+         contrazione, allora
+         \begin{enumerate}
+           \item $e(r(J)) \subseteq J$ e vale l'uguaglianza se $f$ suriettiva.
+         \end{enumerate}
+       \item[13n] Proposizione 4.2.1 \cite{vergura}: Ripreso il setting dell'anello 
+         delle frazioni $A \xrightarrow{\varphi} S^{-1}A$ allora
+         \begin{enumerate}
+           \item \begin{equation*}
+               e(I) = \left\{ \frac{i}{s} \,\middle|\, i \in I, s\in S \right\}
+             \end{equation*}
+           \item $e(r(J)) = J$. \footnote{Corollario (Molto importante): Se 
+               $A$ noetheriano allora $S^{-1}(A)$ è noetheriano, dato che 
+               ogni ideale di $S^{-1}(A)$ è il generato di ideali finitamente 
+             generati} 
+         \end{enumerate}
+         (con dimostrazione).
+       \item[13o] Finisce dimostrazione del punto 2 della proposizione 4.2.1.
+       \item[13o] Dimostra anche che dati $A \xrightarrow{\varphi} S^{-1}A$ vale
+         $r(e(I)) = \left\{ a \in A \,\middle|\, \exists s \in S, \; as \in I 
+         \right\}$.
+       \item[13o] Dimostra una cosa più forte del punto $4$ della proposizione 
+         4.2.1 (ovvero una cosa simile al corollario 4.2.1): C'è una biezione tra 
+         $\operatorname{Spec}(S^{-1}A)$ e l'insieme
+         $\left\{ P \in \operatorname{Spec}(A)\, \middle|\, P \cap
+         S = \varnothing \right\}$.
 	\end{enumerate}  
 
 	\subsection{Lezione 13 - parte 2}
