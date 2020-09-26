@@ -780,9 +780,20 @@
         con la relazione di equivalenza $(a,s) \sim (b,t) \iff \exists u \in S\;
         u(at - bs) = 0$. 
       \item[12k] Osservazione che l'anello delle frazioni è una $A$-algebra
-        rispetto a $\varphi \colon a \mapsto \frac{a}{1}$. 
+        rispetto a 
+        \begin{equation*}
+        	\begin{tikzcd}[row sep=0.2em, column sep = 0.8em]
+        		&\varphi \colon A \arrow{r}  & S^{-1}A \\
+         		&		a \arrow[r, mapsto] & \frac{a}{1}	
+        	\end{tikzcd}
+        \end{equation*}
       \item[12k] Verifica che l'anello delle frazioni è un anello commutativo
-        con unità e buona definizione delle operazioni.
+        con unità e buona definizione delle operazioni di addizione e moltiplicazione
+        \begin{equation*}
+        	\frac{a}{s} + \frac{b}{t} = \frac{at+bs}{st} \quad\ 
+        		\frac{a}{s}\frac{b}{t} = \frac{ab}{st} \quad\
+        		\forall a,b \in A, \forall s,t \in S
+        \end{equation*}
       \item[12k] Nucleo della mappa $\varphi \colon A \to S^{-1}(A)$ e caso
         particolare in cui $\ker(\varphi) = \left\{ 0 \right\}$.
       \item[12k] Riassume dicendo che ha dimostrato il Teorema 4.1.1\cite{vergura}.
@@ -805,7 +816,8 @@
             \right\}$ quindi non ha ideali.
           \item Teorema: c'è una biezione tra $\operatorname{Spec}(S^{-1}(A))$
             e gli ideali primi di $A$ che non intersecano $S$ (con
-            dimostrazione parziale).
+            dimostrazione parziale\footnote{Finisce la dimostrazione con tutti i 
+            \textit{crismi} nella lezione successiva}).
         \end{enumerate}
       %\item[12l] Se $A$ noetheriano allora $S^{-1}A$ è noetheriano.
 	\end{enumerate}  
